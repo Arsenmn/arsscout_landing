@@ -10,14 +10,14 @@ export default function CtaSection() {
               Хочешь быть в топе продавцов Kaspi?
             </h2>
             <p className="text-lg lg:text-xl text-emerald-100/95 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-              Подключись к SaleScout прямо сейчас!
+              Подключись к ArSScout прямо сейчас!
             </p>
           </div>
 
           {/* Main CTA */}
           <div className="bg-linear-to-r from-emerald-500 to-emerald-400 rounded-3xl p-1 shadow-2xl shadow-emerald-600/60 mb-8 lg:mb-12 max-w-md mx-auto">
             <button className="w-full block bg-emerald-950/95 hover:bg-emerald-900/95 rounded-3xl px-8 py-6 lg:py-7 text-lg lg:text-xl font-bold text-emerald-50 shadow-2xl hover:shadow-emerald-600/70 transition-all duration-300 hover:-translate-y-1 border border-emerald-600/50">
-              Подключить SaleScout
+              Подключить ArSScout
             </button>
           </div>
 

@@ -13,7 +13,7 @@ export default function Hero() {
             </p>
             <h1 className="text-4xl font-semibold leading-tight text-emerald-50 sm:text-5xl lg:text-6xl">
               Увеличь продажи своего{" "}
-              <span className="block italic font-[EB_Garamond] text-emerald-300">Kaspi</span>{" "}
+              <span className="block italic font-['JetBrains_Mono'] font-bold text-emerald-300">Kaspi</span>{" "}
               магазина
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-emerald-100/70">

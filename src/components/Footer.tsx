@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Subscribe Card - Fixed responsive span */}
           <div className="bg-emerald-900/40 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-emerald-500/30 shadow-2xl shadow-emerald-900/50 lg:col-span-1">
             <h3 className="text-2xl lg:text-3xl font-bold text-emerald-50 mb-6">
-              Подпишись на новости SaleScout
+              Подпишись на новости ArSScout
             </h3>
             <p className="text-emerald-200 mb-8 text-base lg:text-lg leading-relaxed">
               Получай уведомления о новых функциях и акциях
@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="border-t border-emerald-500/20 pt-12 pb-8">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
             <div className="text-emerald-300">
-              <p className="text-lg font-semibold text-emerald-50 mb-2">SaleScout</p>
+              <p className="text-lg font-semibold text-emerald-50 mb-2">ArSScout</p>
               <p className="text-sm">© 2026. Резидент Astana Hub</p>
             </div>
             <div className="flex flex-wrap gap-6 text-emerald-300 text-sm justify-center lg:justify-start">

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-3">
       <nav className="flex w-full max-w-6xl items-center justify-between rounded-full bg-white/5 px-8 py-3 text-sm text-slate-200 shadow-md shadow-black/40 backdrop-blur-xl border border-white/10">
-        <div className="font-semibold text-lg block italic font-[EB_Garamond] text-emerald-300">ArSScout</div>
+        <div className="font-semibold text-lg block italic font-['JetBrains_Mono'] font-bold text-emerald-300">ArSScout</div>
 
         <ul className="flex gap-10">
           {navLinks.map(
