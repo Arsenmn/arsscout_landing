@@ -4,7 +4,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-3">
-      <nav className="flex w-full max-w-6xl items-center justify-between rounded-full bg-gray-800/20 px-8 py-3 text-sm text-slate-200 shadow-md shadow-black/30 backdrop-blur-xl border border-gray-700/20">
+      <nav className="flex w-full max-w-6xl items-center justify-between rounded-full bg-white/8 px-8 py-3 text-sm text-slate-200 shadow-md shadow-black/30 backdrop-blur-xl border border-gray-700/20">
         {/* Logo */}
         <div className="text-lg block italic font-['JetBrains_Mono'] font-bold text-teal-400">
           ДемпингПро

@@ -26,7 +26,7 @@ export default function Footer() {
               />
               <button 
                 type="submit"
-                className="bg-gradient-to-r from-teal-500 to-emerald-400 hover:from-teal-400 hover:to-emerald-500 px-8 py-4 rounded-2xl text-slate-950 font-semibold shadow-xl hover:shadow-emerald-400/50 transition-all whitespace-nowrap w-full sm:w-auto"
+                className="bg-linear-to-r from-teal-500 to-emerald-400 hover:from-teal-400 hover:to-emerald-500 px-8 py-4 rounded-2xl text-slate-950 font-semibold shadow-xl hover:shadow-emerald-400/50 transition-all whitespace-nowrap w-full sm:w-auto"
               >
                 Подписаться →
               </button>

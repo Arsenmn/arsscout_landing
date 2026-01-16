@@ -26,13 +26,7 @@ export default function SellSection() {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 bg-linear-to-tr from-slate-900 to-slate-950/95 overflow-hidden">
-      {/* Subtle glows */}
-      <div className="absolute inset-0 z-[-1]">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-teal-500/8 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-32 right-20 w-[500px] h-[500px] bg-orange-400/6 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/4 left-1/2 w-72 h-72 bg-teal-400/4 rounded-full blur-2xl animate-spin-slow" />
-      </div>
+    <section className="relative py-24 lg:py-32 overflow-hidden">
 
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         {/* Hero split */}
@@ -78,7 +72,7 @@ export default function SellSection() {
                   <div className="text-slate-400 text-sm uppercase tracking-wider">#1 автоматически</div>
                 </div>
               </div>
-              <div className="w-full h-48 lg:h-64 bg-gradient-to-br from-emerald-500/8 to-green-500/5 rounded-3xl border-2 border-green-400/20 backdrop-blur-xl flex items-center justify-center shadow-2xl relative overflow-hidden">
+              <div className="w-full h-48 lg:h-64 bg-linear-to-br from-emerald-500/8 to-green-500/5 rounded-3xl border-2 border-green-400/20 backdrop-blur-xl flex items-center justify-center shadow-2xl relative overflow-hidden">
                 <ChartColumnBig className="w-20 h-20 text-green-400 absolute animate-pulse" />
                 <div className="absolute top-4 right-4 text-xs text-green-400 font-bold tracking-wider">+350%</div>
               </div>

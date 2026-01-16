@@ -3,7 +3,7 @@ import { ChartBarBig, Lock, Trophy, Zap } from "lucide-react";
 // CtaSection.tsx
 export default function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 via-slate-950/95 to-slate-900/95 py-20 lg:py-32">
+    <section className="relative overflow-hidden py-20 lg:py-32">
       <div className="mx-auto max-w-4xl px-4 lg:px-8">
         <div className="bg-slate-900/70 backdrop-blur-2xl rounded-3xl border border-slate-600/40 shadow-2xl shadow-slate-900/60 p-8 lg:p-12 text-center">
           {/* Header */}
@@ -17,7 +17,7 @@ export default function CtaSection() {
           </div>
 
           {/* Main CTA */}
-          <div className="bg-gradient-to-r from-emerald-500/30 to-teal-400/30 rounded-3xl p-1 shadow-2xl shadow-slate-600/50 mb-8 lg:mb-12 max-w-md mx-auto">
+          <div className="bg-linear-to-r from-emerald-500/30 to-teal-400/30 rounded-3xl p-1 shadow-2xl shadow-slate-600/50 mb-8 lg:mb-12 max-w-md mx-auto">
             <button className="w-full block bg-slate-950/90 hover:bg-slate-900/90 rounded-3xl px-8 py-6 lg:py-7 text-lg lg:text-xl font-bold text-slate-50 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 hover:-translate-y-1 border border-slate-600/50">
               Подключить демпинг‑бот
             </button>

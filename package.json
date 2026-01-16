@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.26.2",
     "lucide-react": "^0.562.0",
     "outline": "link:@heroicons/react/24/outline",
     "react": "^19.2.0",

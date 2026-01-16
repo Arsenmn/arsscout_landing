@@ -1,13 +1,32 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqItems = [
-  "Как сервис помогает с демпингом?",
-  "Можно ли отслеживать конкурентов?",
-  "Сколько стоит подключение?",
-  "Есть ли ограничения по категориям?",
-  "Как быстро видны результаты?",
-  "Можно ли интегрировать с Kaspi и WB?"
+  {
+    question: "Как сервис помогает с демпингом?",
+    answer: "Сервис сразу показывает, кто демпингует на маркетплейсах, чтобы вы могли корректировать цены и сохранять маржу. Получаете уведомления о подозрительных снижениях цен конкурентов."
+  },
+  {
+    question: "Можно ли отслеживать конкурентов?",
+    answer: "Да, можно анализировать конкурентов, видеть их цены, рейтинги, количество отзывов и изменения позиции на Kaspi и WB. Полный мониторинг топ-50 продавцов."
+  },
+  {
+    question: "Сколько стоит подключение?",
+    answer: "Подключение доступно от 0 ₸ для тестового периода. Полные тарифы от 5 000 ₸/мес в зависимости от количества товаров и глубины анализа."
+  },
+  {
+    question: "Есть ли ограничения по категориям?",
+    answer: "Сервис работает со всеми категориями товаров. Единственное ограничение — товары с динамическими ценами (авиабилеты, отели) требуют специальной настройки."
+  },
+  {
+    question: "Как быстро видны результаты?",
+    answer: "Результаты видны уже через 2-4 часа после подключения. Вы получаете актуальные данные о ценах, позициях и рекомендациях по корректировке."
+  },
+  {
+    question: "Можно ли интегрировать с Kaspi и WB?",
+    answer: "Да, полная интеграция с Kaspi и Wildberries. Автоматические обновления цен, уведомления в Telegram и API для ваших систем."
+  }
 ];
 
 export default function QA() {
@@ -18,65 +37,107 @@ export default function QA() {
   };
 
   return (
-    <div className="space-y-6 px-4 pb-12 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-10 text-center italic font-['JetBrains_Mono'] text-slate-300 pt-8">
+    <div className="space-y-6 px-4 pb-12 relative">
+      <h2 className="text-4xl lg:text-5xl font-bold mb-10 text-center italic font-mono text-slate-300 pt-8">
         Часто задаваемые вопросы
       </h2>
 
-      {faqItems.map((question, index) => (
-        <div
-          key={index}
-          className="group bg-slate-900/40 backdrop-blur-xl hover:bg-slate-900/60 rounded-3xl border border-slate-600/20 hover:border-emerald-400/40 p-4 lg:p-6 shadow-lg hover:shadow-emerald-500/20 transition-all duration-200 cursor-pointer overflow-hidden"
-          onClick={() => toggleItem(index)}
-        >
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex-1 min-w-0">
-              <h3 className="text-lg lg:text-xl font-semibold text-slate-50 group-hover:text-emerald-400 pr-4 leading-tight">
-                {question}
-              </h3>
-            </div>
-            <div className="shrink-0 w-8 h-8 lg:w-10 lg:h-10 rounded-xl bg-teal-500/20 group-hover:bg-teal-500/40 border border-teal-400/30 flex items-center justify-center text-slate-200 shadow-md transition-all duration-100 group-hover:scale-110">
-              <Plus
-                className={`w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-200 ${
-                  openIndex === index ? "rotate-45 scale-125 text-emerald-400" : ""
-                }`}
-              />
-            </div>
-          </div>
+      <div className="space-y-4 max-w-4xl mx-auto">
+        {faqItems.map((item, index) => {
+          const isOpen = openIndex === index;
+          
+          return (
+            <motion.div
+              key={index}
+              className="group bg-slate-900/40 backdrop-blur-xl hover:bg-slate-900/60 rounded-3xl border border-slate-600/20 hover:border-emerald-400/40 p-6 lg:p-8 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 cursor-pointer overflow-hidden"
+              onClick={() => toggleItem(index)}
+              initial={false}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* Header */}
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <motion.h3 
+                    className="text-lg lg:text-xl font-semibold text-slate-50 group-hover:text-emerald-400 pr-4 leading-tight"
+                    animate={{ color: isOpen ? "#10B981" : "#F8FAFC" }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {item.question}
+                  </motion.h3>
+                </div>
+                <motion.div 
+                  className="shrink-0 w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-teal-500/20 group-hover:bg-teal-500/40 border border-teal-400/30 flex items-center justify-center text-slate-200 shadow-md transition-all duration-200"
+                  animate={{ 
+                    backgroundColor: isOpen ? "rgba(16, 185, 129, 0.3)" : "rgba(20, 184, 166, 0.2)",
+                    scale: isOpen ? 1.1 : 1
+                  }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <motion.div
+                    animate={{ 
+                      rotate: isOpen ? 45 : 0,
+                      scale: isOpen ? 1.2 : 1 
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <Plus className="w-5 h-5 lg:w-6 lg:h-6" />
+                  </motion.div>
+                </motion.div>
+              </div>
 
-          {/* Animated answer */}
-          <div
-            className={`overflow-hidden transition-all duration-400 ease-in-out ${
-              openIndex === index ? "max-h-96 mt-6 pt-4 border-t border-slate-600/30" : "max-h-0 mt-0 pt-0 border-0"
-            }`}
-          >
-            <p className="text-slate-200/90 leading-relaxed text-sm lg:text-base">
-              {(() => {
-                switch (index) {
-                  case 0:
-                    return "Сервис сразу показывает, кто демпингует на маркетплейсах, чтобы вы могли корректировать цены и сохранять маржу.";
-                  case 1:
-                    return "Да, можно анализировать конкурентов, видеть их цены, рейтинги и изменения позиции на Kaspi и WB.";
-                  case 2:
-                    return "Подключение доступно от 0 ₸, в зависимости от выбранного тарифа и количества товаров.";
-                  case 3:
-                    return "Сервис работает со всеми категориями, но для некоторых специфических товаров могут быть ограничения.";
-                  case 4:
-                    return "Результаты видны уже через несколько часов: вы получаете актуальные данные о ценах и позициях.";
-                  case 5:
-                    return "Да, можно интегрировать с Kaspi и Wildberries, чтобы получать обновления автоматически.";
-                  default:
-                    return "Ответ появится здесь.";
-                }
-              })()}
-            </p>
-          </div>
-        </div>
-      ))}
+              {/* Answer - Smooth Framer Motion */}
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ 
+                      opacity: 0, 
+                      height: 0, 
+                      marginTop: 0,
+                      paddingTop: 0,
+                      paddingBottom: 0
+                    }}
+                    animate={{ 
+                      opacity: 1, 
+                      height: "auto",
+                      marginTop: 24,
+                      paddingTop: 16,
+                      paddingBottom: 16
+                    }}
+                    exit={{
+                      opacity: 0,
+                      height: 0,
+                      marginTop: 0,
+                      paddingTop: 0,
+                      paddingBottom: 0
+                    }}
+                    transition={{ 
+                      duration: 0.4, 
+                      ease: [0.25, 0.46, 0.45, 0.94] 
+                    }}
+                    className="border-t border-slate-700/50 overflow-hidden"
+                  >
+                    <p className="text-slate-300 leading-relaxed text-sm lg:text-base mt-4">
+                      {item.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </div>
 
-      <button className="w-full mt-10 bg-gradient-to-r from-teal-500 to-emerald-400 hover:from-teal-400 hover:to-emerald-500 text-slate-950 py-5 lg:py-6 px-8 rounded-3xl font-semibold text-lg shadow-2xl hover:shadow-emerald-400/50 transition-all duration-200 hover:-translate-y-1">
+      <motion.button 
+        className="w-full mt-12 lg:mt-16 bg-linear-to-r from-teal-500 to-emerald-400 hover:from-teal-400 hover:to-emerald-500 text-slate-950 py-5 lg:py-6 px-8 rounded-3xl font-semibold text-lg shadow-2xl hover:shadow-emerald-400/50 transition-all duration-300 mx-auto block max-w-md"
+        whileHover={{ 
+          scale: 1.02, 
+          boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.4)" 
+        }}
+        whileTap={{ scale: 0.98 }}
+      >
         Получить демо
-      </button>
+      </motion.button>
     </div>
   );
 }

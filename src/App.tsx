@@ -12,27 +12,26 @@ import StatsSection from "./components/Stats"
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-50 overflow-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
       
-      {/* Unified decorative background */}
-      <div className="absolute inset-0 -z-10">
-        {/* Main gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900/90" />
+      {/* GLOBAL BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
+        {/* Base gradient */}
+        <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-slate-900 to-zinc-950" />
 
-        {/* Subtle floating blurred shapes */}
-        <div className="absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/3 right-20 w-72 h-72 bg-teal-400/8 rounded-full blur-2xl animate-spin-slow" />
-        <div className="absolute bottom-1/4 left-1/2 w-80 h-80 bg-amber-400/6 rounded-full blur-2xl animate-pulse delay-1000" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/6 rounded-full blur-3xl animate-pulse delay-2000" />
+        {/* Soft moving noise / grid */}
+        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(circle_1px,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:32px_32px] animate-[gridmove_40s_linear_infinite]" />
+
+        {/* Subtle neutral glow */}
+        <div className="absolute top-[15%] left-[50%] -translate-x-1/2 w-[60vw] h-[60vw] bg-linear-radial from-slate-400/10 via-transparent to-transparent blur-[120px]" />
       </div>
 
-      {/* Site content */}
       <Header />
       <Hero />
       <StatsSection />
       <InfoCard />
       <SalesPitchSection />
-      <SellSection /> 
+      <SellSection />
       <Sellers />
       <CtaSection />
       <QA />
@@ -41,5 +40,4 @@ function App() {
   )
 }
 
-export default App;
-
+export default App
