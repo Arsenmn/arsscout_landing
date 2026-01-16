@@ -1,35 +1,58 @@
+"use client";
+
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const faqItems = [
+const items = [
   {
-    question: "Как сервис помогает с демпингом?",
-    answer: "Сервис сразу показывает, кто демпингует на маркетплейсах, чтобы вы могли корректировать цены и сохранять маржу. Получаете уведомления о подозрительных снижениях цен конкурентов."
+    id: '1',
+    title: 'Как сервис помогает с демпингом?',
+    content: 'Сервис сразу показывает, кто демпингует на маркетплейсах, чтобы вы могли корректировать цены и сохранять маржу. Получаете уведомления о подозрительных снижениях цен конкурентов.',
   },
   {
-    question: "Можно ли отслеживать конкурентов?",
-    answer: "Да, можно анализировать конкурентов, видеть их цены, рейтинги, количество отзывов и изменения позиции на Kaspi и WB. Полный мониторинг топ-50 продавцов."
+    id: '2',
+    title: 'Можно ли отслеживать конкурентов?',
+    content: 'Да, можно анализировать конкурентов, видеть их цены, рейтинги, количество отзывов и изменения позиции на Kaspi и WB. Полный мониторинг топ-50 продавцов.',
   },
   {
-    question: "Сколько стоит подключение?",
-    answer: "Подключение доступно от 0 ₸ для тестового периода. Полные тарифы от 5 000 ₸/мес в зависимости от количества товаров и глубины анализа."
+    id: '3',
+    title: 'Сколько стоит подключение?',
+    content: 'Подключение доступно от 0 ₸ для тестового периода. Полные тарифы от 5 000 ₸/мес в зависимости от количества товаров и глубины анализа.',
   },
   {
-    question: "Есть ли ограничения по категориям?",
-    answer: "Сервис работает со всеми категориями товаров. Единственное ограничение — товары с динамическими ценами (авиабилеты, отели) требуют специальной настройки."
+    id: '4',
+    title: 'Есть ли ограничения по категориям?',
+    content: 'Сервис работает со всеми категориями товаров. Единственное ограничение — товары с динамическими ценами (авиабилеты, отели) требуют специальной настройки.',
   },
   {
-    question: "Как быстро видны результаты?",
-    answer: "Результаты видны уже через 2-4 часа после подключения. Вы получаете актуальные данные о ценах, позициях и рекомендациях по корректировке."
+    id: '5',
+    title: 'Как быстро видны результаты?',
+    content: 'Результаты видны уже через 2-4 часа после подключения. Вы получаете актуальные данные о ценах, позициях и рекомендациях по корректировке.',
   },
   {
-    question: "Можно ли интегрировать с Kaspi и WB?",
-    answer: "Да, полная интеграция с Kaspi и Wildberries. Автоматические обновления цен, уведомления в Telegram и API для ваших систем."
-  }
+    id: '6',
+    title: 'Можно ли интегрировать с Kaspi и WB?',
+    content: 'Да, полная интеграция с Kaspi и Wildberries. Автоматические обновления цен, уведомления в Telegram и API для ваших систем.',
+  },
 ];
 
-export default function QA() {
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index,
+      duration: 0.4,
+    },
+  }),
+};
+
+const QA = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -37,107 +60,121 @@ export default function QA() {
   };
 
   return (
-    <div className="space-y-6 px-4 pb-12 relative">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-10 text-center italic font-mono text-slate-300 pt-8">
-        Часто задаваемые вопросы
-      </h2>
+    <section className="py-16 lg:py-24 bg-slate-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-16 lg:mb-24"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-700 bg-clip-text text-transparent"
+            initial={{ scale: 0.95 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Часто задаваемые вопросы
+          </motion.h2>
+          <motion.p
+            className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Всё о демпинг-контроле и мониторинге конкурентов
+          </motion.p>
+        </motion.div>
 
-      <div className="space-y-4 max-w-4xl mx-auto">
-        {faqItems.map((item, index) => {
-          const isOpen = openIndex === index;
-          
-          return (
-            <motion.div
-              key={index}
-              className="group bg-slate-900/40 backdrop-blur-xl hover:bg-slate-900/60 rounded-3xl border border-slate-600/20 hover:border-emerald-400/40 p-6 lg:p-8 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 cursor-pointer overflow-hidden"
-              onClick={() => toggleItem(index)}
-              initial={false}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              {/* Header */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 min-w-0">
+        <div className="space-y-3">
+          {items.map((item, index) => {
+            const isOpen = openIndex === index;
+            
+            return (
+              <motion.div
+                key={item.id}
+                custom={index}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 shadow-sm hover:shadow-md hover:border-emerald-400/60 hover:shadow-emerald-200/30 transition-all duration-300 cursor-pointer"
+                onClick={() => toggleItem(index)}
+              >
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 hover:bg-slate-50/50 hover:rounded-t-2xl transition-colors">
                   <motion.h3 
-                    className="text-lg lg:text-xl font-semibold text-slate-50 group-hover:text-emerald-400 pr-4 leading-tight"
-                    animate={{ color: isOpen ? "#10B981" : "#F8FAFC" }}
+                    className="text-lg lg:text-xl font-semibold text-slate-900 flex-1 pr-4 leading-tight"
+                    animate={{ color: isOpen ? '#047857' : '#111827' }}
                     transition={{ duration: 0.3 }}
                   >
-                    {item.question}
+                    {item.title}
                   </motion.h3>
+                  <motion.div 
+                    className="w-11 h-11 rounded-xl bg-emerald-100 border-2 border-emerald-200 flex items-center justify-center text-emerald-700 shadow-sm hover:shadow-md transition-all duration-300 flex-shrink-0"
+                    animate={{ 
+                      backgroundColor: isOpen ? '#BEF5D9' : '#D1F5E8',
+                      scale: isOpen ? 1.15 : 1
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.div
+                      animate={{ 
+                        rotate: isOpen ? 45 : 0,
+                        scale: isOpen ? 1.25 : 1 
+                      }}
+                      transition={{ duration: 0.35, ease: "easeInOut" }}
+                    >
+                      <Plus className="w-5 h-5" />
+                    </motion.div>
+                  </motion.div>
                 </div>
-                <motion.div 
-                  className="shrink-0 w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-teal-500/20 group-hover:bg-teal-500/40 border border-teal-400/30 flex items-center justify-center text-slate-200 shadow-md transition-all duration-200"
-                  animate={{ 
-                    backgroundColor: isOpen ? "rgba(16, 185, 129, 0.3)" : "rgba(20, 184, 166, 0.2)",
-                    scale: isOpen ? 1.1 : 1
-                  }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <motion.div
-                    animate={{ 
-                      rotate: isOpen ? 45 : 0,
-                      scale: isOpen ? 1.2 : 1 
-                    }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    <Plus className="w-5 h-5 lg:w-6 lg:h-6" />
-                  </motion.div>
-                </motion.div>
-              </div>
 
-              {/* Answer - Smooth Framer Motion */}
-              <AnimatePresence>
-                {isOpen && (
-                  <motion.div
-                    initial={{ 
-                      opacity: 0, 
-                      height: 0, 
-                      marginTop: 0,
-                      paddingTop: 0,
-                      paddingBottom: 0
-                    }}
-                    animate={{ 
-                      opacity: 1, 
-                      height: "auto",
-                      marginTop: 24,
-                      paddingTop: 16,
-                      paddingBottom: 16
-                    }}
-                    exit={{
-                      opacity: 0,
-                      height: 0,
-                      marginTop: 0,
-                      paddingTop: 0,
-                      paddingBottom: 0
-                    }}
-                    transition={{ 
-                      duration: 0.4, 
-                      ease: [0.25, 0.46, 0.45, 0.94] 
-                    }}
-                    className="border-t border-slate-700/50 overflow-hidden"
-                  >
-                    <p className="text-slate-300 leading-relaxed text-sm lg:text-base mt-4">
-                      {item.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          );
-        })}
+                {/* Answer */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ 
+                        opacity: 0, 
+                        height: 0, 
+                        marginTop: 0,
+                        paddingTop: 0,
+                        paddingBottom: 0
+                      }}
+                      animate={{ 
+                        opacity: 1, 
+                        height: "auto",
+                        marginTop: 0,
+                        paddingTop: 20,
+                        paddingBottom: 20
+                      }}
+                      exit={{
+                        opacity: 0,
+                        height: 0,
+                        marginTop: 0,
+                        paddingTop: 0,
+                        paddingBottom: 0
+                      }}
+                      transition={{ 
+                        duration: 0.4, 
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      className="px-6 pb-6 border-t border-slate-200 bg-slate-50"
+                    >
+                      <p className="text-slate-700 leading-relaxed text-base">
+                        {item.content}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-
-      <motion.button 
-        className="w-full mt-12 lg:mt-16 bg-linear-to-r from-teal-500 to-emerald-400 hover:from-teal-400 hover:to-emerald-500 text-slate-950 py-5 lg:py-6 px-8 rounded-3xl font-semibold text-lg shadow-2xl hover:shadow-emerald-400/50 transition-all duration-300 mx-auto block max-w-md"
-        whileHover={{ 
-          scale: 1.02, 
-          boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.4)" 
-        }}
-        whileTap={{ scale: 0.98 }}
-      >
-        Получить демо
-      </motion.button>
-    </div>
+    </section>
   );
-}
+};
+
+export default QA;
