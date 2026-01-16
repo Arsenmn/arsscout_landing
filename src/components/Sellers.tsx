@@ -109,9 +109,6 @@ export default function Sellers() {
                               <p className="font-semibold text-slate-700 text-base lg:text-lg truncate flex-1">
                                 {slide.name}
                               </p>
-                              <div className="flex gap-1 text-sm text-slate-400 whitespace-nowrap">
-                                <span>📱</span> БирКаспи
-                              </div>
                             </div>
                           </div>
                         </div>
