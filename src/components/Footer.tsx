@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
             <div className="text-slate-600">
               <p className="text-lg font-semibold text-slate-900 mb-2">Сервис демпинга</p>
-              <p className="text-sm">© 2026. Резидент Astana Hub</p>
+              <p className="text-sm">© 2026. ХТМЛ КСС</p>
             </div>
             <div className="flex flex-wrap gap-6 text-slate-600 text-sm justify-center lg:justify-start">
               <a href="#" className="hover:text-emerald-600 transition-colors hover:underline">Политика конфиденциальности</a>

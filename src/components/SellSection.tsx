@@ -47,19 +47,19 @@ export default function SellSection() {
         <div className="grid lg:grid-cols-2 items-center gap-12 lg:gap-24 mb-24 lg:mb-32">
           {/* Left text + CTA */}
           <div className="lg:order-2 space-y-8 lg:max-w-lg">
-            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-emerald-50/80 border border-emerald-200/50 backdrop-blur-xl shadow-lg shadow-emerald-100/50">
-              <span className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-blue-50/80 border border-blue-200/50 backdrop-blur-xl shadow-lg shadow-blue-100/50">
+              <span className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
               <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">
                 Антидемпинг бот
               </span>
             </div>
 
-            <h2 className="text-5xl lg:text-7xl font-black bg-gradient-to-r from-slate-900 via-slate-700 to-emerald-600/90 bg-clip-text text-transparent leading-tight">
+            <h2 className="text-5xl lg:text-7xl font-black bg-gradient-to-r from-red-400 to-red-700/90 bg-clip-text text-transparent leading-tight">
               Демпингеры крадут
               <br />
               ваши заказы?
               <br />
-              <span className="text-emerald-600">Мы их обходим</span>
+              <span className="text-red-600 uppercase">Мы их обходим</span>
             </h2>
 
             <p className="text-xl text-slate-700/90 leading-relaxed mb-10">
@@ -68,13 +68,13 @@ export default function SellSection() {
               <strong> +350% заказов без снижения маржи.</strong>
             </p>
 
-            <button className="group relative w-full lg:w-auto px-12 py-6 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-xl rounded-3xl shadow-xl hover:shadow-emerald-500/50 transition-all duration-500 backdrop-blur-sm border border-emerald-400/50">
+            <button className="group relative w-full lg:w-auto px-12 py-6 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-xl rounded-3xl shadow-xl hover:shadow-red-500/50 transition-all duration-500 backdrop-blur-sm border border-red-400/50">
               <span className="relative z-10 flex items-center justify-center gap-3">
                 <Rocket className="w-5 h-5" />
                 Занять 1-е место бесплатно
                 <span className="w-0 group-hover:w-24 h-px bg-white transition-all duration-500" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/50 to-teal-400/50 -inset-1 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400/50 to-red-400/50 -inset-1 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity" />
             </button>
           </div>
 

@@ -99,22 +99,22 @@ const QA = () => {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 shadow-sm hover:shadow-md hover:border-emerald-400/60 hover:shadow-emerald-200/30 transition-all duration-300 cursor-pointer"
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 shadow-sm hover:shadow-md hover:border-blue-400/60 hover:shadow-blue-200/30 transition-all duration-300 cursor-pointer"
                 onClick={() => toggleItem(index)}
               >
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 hover:bg-slate-50/50 hover:rounded-t-2xl transition-colors">
                   <motion.h3 
                     className="text-lg lg:text-xl font-semibold text-slate-900 flex-1 pr-4 leading-tight"
-                    animate={{ color: isOpen ? '#047857' : '#111827' }}
+                    animate={{ color: isOpen ? '#0B3D91' : '#111827' }}
                     transition={{ duration: 0.3 }}
                   >
                     {item.title}
                   </motion.h3>
                   <motion.div 
-                    className="w-11 h-11 rounded-xl bg-emerald-100 border-2 border-emerald-200 flex items-center justify-center text-emerald-700 shadow-sm hover:shadow-md transition-all duration-300 flex-shrink-0"
+                    className="w-11 h-11 rounded-xl bg-blue-100 border-2 border-blue-200 flex items-center justify-center text-blue-700 shadow-sm hover:shadow-md transition-all duration-300 flex-shrink-0"
                     animate={{ 
-                      backgroundColor: isOpen ? '#BEF5D9' : '#D1F5E8',
+                      backgroundColor: isOpen ? '#B3D9FF' : '#D1EBFF',
                       scale: isOpen ? 1.15 : 1
                     }}
                     transition={{ duration: 0.3 }}

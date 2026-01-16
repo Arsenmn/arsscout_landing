@@ -62,8 +62,8 @@ export default function Hero() {
             </div>
 
             {/* Top right card */}
-            <div className="group relative rounded-3xl bg-white shadow-lg hover:shadow-xl border border-gray-200/60 hover:border-emerald-300/80 p-6 lg:p-8 hover:-translate-y-2 transition-all duration-400 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-teal-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="group relative rounded-3xl bg-white shadow-lg hover:shadow-xl border border-gray-200/60 hover:border-red-300/80 p-6 lg:p-8 hover:-translate-y-2 transition-all duration-400 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 to-red-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-center gap-3 text-sm">
                 <div className="w-10 h-10 bg-gradient-to-r from-red-100 to-red-200 rounded-2xl flex items-center justify-center shadow-md">
                   <Landmark className="w-5 h-5 text-red-600" />
@@ -83,7 +83,7 @@ export default function Hero() {
             </div>
 
             {/* Bottom right card */}
-            <div className="group relative rounded-3xl bg-white shadow-lg hover:shadow-xl border border-gray-200/60 hover:border-emerald-300/80 p-6 lg:p-8 hover:-translate-y-2 transition-all duration-400 overflow-hidden">
+            <div className="group relative rounded-3xl bg-white shadow-lg hover:shadow-xl border border-gray-200/60 hover:border-blue-300/80 p-6 lg:p-8 hover:-translate-y-2 transition-all duration-400 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-center gap-3 text-sm">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center shadow-md">
