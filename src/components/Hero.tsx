@@ -3,7 +3,10 @@ import { Landmark, ShoppingCart } from "lucide-react";
 // Hero.tsx - LIGHT THEME CONVERSION
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 bg-gradient-to-b from-slate-50 via-white to-gray-50" id="home">
+    <section
+      className="relative overflow-hidden pt-16"
+      id="home"
+    >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 py-16 lg:px-8">
         {/* Text column */}
         <div className="grid gap-12 lg:grid-cols-[1.2fr,1fr] items-center">
@@ -14,7 +17,9 @@ export default function Hero() {
 
             <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Контролируй цены и{" "}
-              <span className="block italic font-mono font-black bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
+              <span
+                className="block italic font-mono font-black bg-gradient-to-r text-[#FFD700] bg-clip-text underline uppercase"
+              >
                 выигрывай конкурентов
               </span>
             </h1>

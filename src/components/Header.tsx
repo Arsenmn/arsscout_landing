@@ -1,25 +1,30 @@
+interface INavLinks {
+  title: string;
+  link: string;
+}
+
 // Header.tsx
 const Header = () => {
-  const navLinks = [
+  const navLinks: INavLinks[] = [
     {
       title: "Главная",
       link: "#home",
     },
     {
       title: "О нас",
-      link: "#home",
+      link: "#about",
     },
     {
       title: "Тарифы",
-      link: "#home",
+      link: "#pricing",
     },
     {
       title: "QA",
-      link: "#home",
+      link: "#qa",
     },
     {
       title: "Контакты",
-      link: "#home",
+      link: "#contacts",
     },
   ];
 
@@ -27,7 +32,9 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-3">
       <nav className="flex w-full max-w-6xl items-center justify-between rounded-full bg-slate-400/1 px-8 py-3 text-sm text-slate-900 shadow-md shadow-black/30 backdrop-blur-xl border border-gray-700/20">
         {/* Logo */}
-        <div className="text-lg block italic font-['JetBrains_Mono'] font-bold text-teal-400">
+        <div
+          className="text-lg block italic font-['JetBrains_Mono'] font-bold text-teal-400"
+        >
           ДемпингПро
         </div>
 
@@ -37,10 +44,10 @@ const Header = () => {
             <li
               key={title}
               className="
-                relative cursor-pointer text-slate-900
+                relative cursor-pointer text-teal-600
                 before:absolute before:left-0 before:-bottom-1
                 before:h-0.5 before:w-full before:origin-left
-                before:scale-x-0 before:bg-slate-400
+                before:scale-x-0 before:bg-teal-400
                 before:transition-transform before:duration-300
                 hover:before:scale-x-100
               "

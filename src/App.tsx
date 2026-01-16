@@ -9,7 +9,7 @@ import StatsSection from "./components/Stats";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F0FDF4] text-on-background overflow-hidden relative ">
+    <div className="min-h-screen text-on-background overflow-hidden relative scroll-smooth">
       <Header />
       <Hero />
       <StatsSection />

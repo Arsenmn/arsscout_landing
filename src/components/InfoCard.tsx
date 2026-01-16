@@ -10,8 +10,9 @@ interface InfoCardProps {
   subtitle: string;
   title: string;
   features: string[];
-  color: string;
+  textColor: string;
   icon: LucideIcon;
+  shadowColor: string;
 }
 
 export default function InfoCards() {
@@ -26,8 +27,9 @@ export default function InfoCards() {
         "Отслеживание рынка за минуты",
         "Никакой игры вслепую",
       ],
-      color: "text-violet-500",
+      textColor: "text-violet-500",
       icon: Eye,
+      shadowColor: "shadow-violet-500",
     },
     {
       name: "Защита от демпинга",
@@ -39,8 +41,9 @@ export default function InfoCards() {
         "Сохраняй маржу",
         "Продавай умнее, а не дешевле",
       ],
-      color: "text-blue-500",
+      textColor: "text-blue-500",
       icon: Shield,
+      shadowColor: "shadow-blue-500",
     },
     {
       name: "Рост прибыли",
@@ -52,8 +55,9 @@ export default function InfoCards() {
         "Убираешь лишние скидки",
         "Зарабатываешь, а не выживаешь",
       ],
-      color: "text-emerald-500",
+      textColor: "text-emerald-500",
       icon: BanknoteArrowUpIcon,
+      shadowColor: "shadow-emerald-500",
     },
   ];
 
@@ -61,10 +65,21 @@ export default function InfoCards() {
     <div className="relative w-full py-24 px-4 lg:px-8 mx-auto overflow-hidden bg-gradient-to-b from-slate-50 to-gray-50">
       <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
         {cardInfo.map(
-          ({ name, subtitle, title, features, color, icon: Icon }, index) => (
+          (
+            {
+              name,
+              subtitle,
+              title,
+              features,
+              textColor,
+              shadowColor,
+              icon: Icon,
+            },
+            index
+          ) => (
             <div
               key={index}
-              className="group relative h-[42rem] lg:h-[48rem] border border-slate-200/60 rounded-3xl shadow-lg hover:shadow-xl hover:shadow-slate-300/40 hover:border-slate-300/80 transition-all duration-500 overflow-hidden backdrop-blur-sm hover:backdrop-blur-md bg-white/90 hover:bg-white"
+              className={`group relative h-[42rem] lg:h-[48rem] border border-slate-200/60 rounded-3xl shadow-lg hover:shadow-xl hover:${shadowColor} hover:border-slate-300/80 transition-all duration-500 overflow-hidden backdrop-blur-sm hover:backdrop-blur-md bg-white/90 hover:bg-white`}
             >
               <div className="relative bg-white/95 backdrop-blur-md rounded-3xl p-8 lg:p-10 h-full flex flex-col shadow-inner border border-slate-100/70 hover:border-slate-200/80 transition-all duration-300">
                 {/* Top */}
@@ -73,7 +88,7 @@ export default function InfoCards() {
                     <div className="w-14 h-14 lg:w-16 lg:h-16 bg-slate-100/80 hover:bg-slate-200 rounded-2xl flex items-center justify-center border border-slate-300/60 shadow-md shrink-0 backdrop-blur-sm hover:border-slate-400/80 transition-all duration-300 hover:shadow-slate-200">
                       <span className="text-yellow-500 text-2xl lg:text-3xl font-bold drop-shadow-sm">
                         <Icon
-                          className={`w-8 h-8 lg:w-9 lg:h-9 ${color} transition-transform duration-300 group-hover:scale-110`}
+                          className={`w-8 h-8 lg:w-9 lg:h-9 ${textColor} transition-transform duration-300 group-hover:scale-110`}
                         />
                       </span>
                     </div>

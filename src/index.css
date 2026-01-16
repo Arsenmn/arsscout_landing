@@ -10,3 +10,7 @@
     transform: translateX(100%);
   }
 }
+
+body {
+  background-color: #eff4f4;
+}
