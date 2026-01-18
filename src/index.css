@@ -1,4 +1,13 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -11,6 +20,43 @@
   }
 }
 
-body {
-  background-color: #eff4f4;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+}
+.floating-dots {
+  animation: float 6s ease-in-out infinite;
+}
+.glow-border {
+  box-shadow:
+    0 0 30px rgba(16, 185, 129, 0.5),
+    0 0 60px rgba(16, 185, 129, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+
+@keyframes runBorder {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes runBorderReverse {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+.animate-runBorder {
+  animation: runBorder 4s linear infinite;
+}
+
+.animate-runBorderReverse {
+  animation: runBorderReverse 4s linear infinite;
 }
