@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function GetButton() {
   return (
     <button
@@ -33,9 +31,7 @@ export default function GetButton() {
           <path d="M8 5v14l11-7z" />
         </svg>
       </span>
-
       Watch demo
-
       {/* Bottom Light Line */}
       <span
         className="
@@ -50,7 +46,6 @@ export default function GetButton() {
           group-hover:blur-[1px]
         "
       />
-
       {/* Bottom Bloom / Aura */}
       <span
         className="

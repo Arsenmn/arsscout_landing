@@ -1,10 +1,11 @@
-"use client";
-import React from "react";
 import GetButton from "./UI/GetButton";
 
 const StatsSection = () => {
   return (
-    <div className="w-full h-[300px] md:h-[350px] bg-gradient-to-br from-white via-slate-100 to-white dark:from-slate-900 dark:via-slate-950 dark:to-black p-4 md:p-8 flex flex-col md:flex-row items-center justify-between relative overflow-hidden shadow-2xl transition-colors" id="#demo">
+    <div
+      className="w-full h-[300px] md:h-[350px] bg-gradient-to-br from-white via-slate-100 to-white dark:from-slate-900 dark:via-slate-950 dark:to-black p-4 md:p-8 flex flex-col md:flex-row items-center justify-between relative overflow-hidden shadow-2xl transition-colors"
+      id="#demo"
+    >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-transparent to-emerald-500/10 dark:from-teal-400/20 dark:to-teal-500/20" />
 
@@ -32,8 +33,14 @@ const StatsSection = () => {
         {/* Dots logo/graphic */}
         <div className="flex space-x-1">
           <div className="w-3 h-3 bg-red-500 dark:bg-red-400 rounded-full opacity-80 shadow-lg shadow-red-500/50 dark:shadow-red-400/50 animate-pulse" />
-          <div className="w-3 h-3 bg-purple-500 dark:bg-purple-400 rounded-full opacity-80 shadow-lg shadow-purple-500/50 dark:shadow-purple-400/50 animate-pulse" style={{animationDelay: '0.1s'}} />
-          <div className="w-3 h-3 bg-blue-500 dark:bg-blue-400 rounded-full opacity-80 shadow-lg shadow-blue-500/50 dark:shadow-blue-400/50 animate-pulse" style={{animationDelay: '0.2s'}} />
+          <div
+            className="w-3 h-3 bg-purple-500 dark:bg-purple-400 rounded-full opacity-80 shadow-lg shadow-purple-500/50 dark:shadow-purple-400/50 animate-pulse"
+            style={{ animationDelay: "0.1s" }}
+          />
+          <div
+            className="w-3 h-3 bg-blue-500 dark:bg-blue-400 rounded-full opacity-80 shadow-lg shadow-blue-500/50 dark:shadow-blue-400/50 animate-pulse"
+            style={{ animationDelay: "0.2s" }}
+          />
         </div>
 
         <GetButton />
@@ -53,7 +60,6 @@ const StatsSection = () => {
           <br />
           Удержание топ-позиций
         </h2>
-
       </div>
 
       {/* Bottom overlay text */}
